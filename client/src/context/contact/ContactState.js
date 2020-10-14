@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import uuid from "uuid";
+import {v4 as uuidv4} from 'uuid';
 import ContactContext from "./contactContext";
 import contactReducer from "./contactReducer";
 
@@ -18,25 +18,59 @@ import {
 const ContactState = (props) => {
   const initialState = {
     contacts: [
-      {
-        id: "1",
-        name: "Deepthy",
-        email: "deep@gmail.com",
-        phone: "123-456-777",
-      },
-      { id: "2", name: "Deept", email: "dee@gmail.com", phone: "123-456-777" },
-      { id: "3", name: "aditya", email: "adi@gmail.com", phone: "123-456-777" },
+      {id: 1,
+        name: 'Deepthy',
+        email: 'deep@gmail.com',
+        phone: '123-456-777',
+        type: 'personal'
+    
+    },
+    {id: 2,
+      name: 'Ajay',
+      email: 'ajay@gmail.com',
+      phone: '123-456-777',
+      type: 'personal'
+  
+  },
+  {id: 3,
+    name: 'Aditya',
+    email: 'adi@gmail.com',
+    phone: '123-456-777',
+    type: 'professional'
+
+}
     ],
+    current: null
   };
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
 
   //Actions
   //Add contacts
+
+  const addContact = contact => {
+    const id = uuidv4();
+    contact.id = id
+     dispatch({type: ADD_CONTACT, payload: contact})
+
+  }
   //Delete contacts
+
+  const deleteContact = (id) => {
+    dispatch({type : DELETE_CONTACT, payload: id})
+  }
   //Set current contact
+  const setCurrent = contact => {
+    dispatch({type: SET_CURRENT,payload: contact})
+  }
   //Clear current contact
+  const clearCurrent = () => {
+    dispatch({type: CLEAR_CURRENT})
+  }
   // Update contact
+  const updateContact = contact => {
+    dispatch({type: UPDATE_CONTACT, payload:contact})
+  }
   // Filter contacts
   // Clear Filter
 
@@ -44,6 +78,13 @@ const ContactState = (props) => {
     <ContactContext.Provider
       value={{
         contacts: state.contacts,
+        current: state.current,
+        addContact,
+        deleteContact,
+        setCurrent,
+        clearCurrent,
+        updateContact
+
       }}
     >
       {props.children}
