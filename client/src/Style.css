@@ -2,11 +2,11 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #03254c;
+  --primary-color: #003699;
   --dark-color: #333333;
   --light-color: #f4f4f4;
-  --danger-color: #A41726;
-  --success-color: #3f6f21;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
 }
 
 * {
@@ -19,19 +19,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  /* background: url('./img/Contact_1.jpg'); */
- 
-  /* background: linear-gradient(95deg,#ece9e6, #FFFFFF); */
-  background: linear-gradient(95deg, #eef2f3,#f0f5f7,#aebbc4,#8f9ea8);
-
-  /* background: repeating-linear-gradient(
-      180deg,
-      #ece9e6 0px,
-      #FFFFFF 40px 
-      
-     
-    );
-  */
+  background-color: #fff;
   color: #333;
 }
 
@@ -83,8 +71,7 @@ img {
 }
 
 .text-primary {
-  /* color: var(--primary-color); */
-  color: #2565AE;
+  color: var(--primary-color);
 }
 
 .text-dark {
@@ -108,15 +95,7 @@ img {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
-  /* box-shadow: 0 7px 10px rgba(0, 0, 0, 0.19), 0 4px 4px rgba(0, 0, 0, 0.164); */
- 
-
 }
-/* .card:hover {
-  transform: scale(1.1);
-  /* transform: skewX(14deg); */
-  /* transform: skewY(14deg); */
- */
 
 /* List */
 .list {
@@ -266,13 +245,8 @@ img {
 .alert-light {
   background: var(--light-color);
   color: #333;
-  
 }
 
-.btn-light:hover {
-  background: #01142b;
-  opacity: 0.8;
-}
 .btn-dark,
 .bg-dark,
 .badge-dark,
