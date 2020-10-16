@@ -23,7 +23,7 @@ body {
  
   /* background: linear-gradient(95deg,#ece9e6, #FFFFFF); */
   background: linear-gradient(95deg, #eef2f3,#f0f5f7,#aebbc4,#8f9ea8);
-
+  /* background: linear-gradient(95deg, #6a85b6 0%, #bac8e0 100%); */
   /* background: repeating-linear-gradient(
       180deg,
       #ece9e6 0px,
@@ -184,6 +184,7 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
+  border: none;
 }
 
 .grid-3 {
